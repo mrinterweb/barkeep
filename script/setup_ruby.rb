@@ -40,8 +40,8 @@ def ensure_gem(gem)
   stream_output "gem install #{gem} --no-ri --no-rdoc"
 end
 
-required_ruby_version = rbenv_version.split("-").first
-ensure_ruby_version(required_ruby_version)
+# required_ruby_version = rbenv_version.split("-").first
+# ensure_ruby_version(required_ruby_version)
 ensure_gem("bundler")
 ensure_gem("terraform")
 

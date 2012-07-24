@@ -21,7 +21,7 @@ ensure_packages(
 
 ensure_file("config/system_setup_files/.bashrc", "#{ENV['HOME']}/.bashrc")
 
-ensure_rbenv_ruby("1.9.2-p290")
+# ensure_rbenv_ruby("1.9.2-p290")
 
 ensure_run_once("nginx site-enabled has correct permissions") do
   shell "sudo chgrp admin -R /etc/nginx/sites-enabled", :silent => true

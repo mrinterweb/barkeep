@@ -27,9 +27,9 @@ dep "create mysql barkeep database" do
   meet { shell "#{mysqladmin_command} -u root create barkeep" }
 end
 
-ensure_run_once("database migrations") { shell "script/run_migrations.rb" }
+ensure_run_once("database migrations") { shell "ruby script/run_migrations.rb" }
 
 satisfy_dependencies()
 
 # This demo user is only used in Barkeep's readonly demo mode.
-puts `script/create_demo_user.rb` if defined?(ENABLE_READONLY_DEMO_MODE) && ENABLE_READONLY_DEMO_MODE
+puts `ruby script/create_demo_user.rb` if defined?(ENABLE_READONLY_DEMO_MODE) && ENABLE_READONLY_DEMO_MODE
